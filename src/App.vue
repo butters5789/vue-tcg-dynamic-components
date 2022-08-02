@@ -5,12 +5,14 @@
     <button @click="setActiveComponent('badge-list')">Badge List</button>
     <button @click="setActiveComponent('user-info')">User Info</button>
 
-    <component
-      :is="activeComponent"
-      :full-name="activeUser.name"
-      :info-text="activeUser.description"
-      :role="activeUser.role"
-    />
+    <keep-alive>
+      <component
+        :is="activeComponent"
+        :full-name="activeUser.name"
+        :info-text="activeUser.description"
+        :role="activeUser.role"
+      />
+    </keep-alive>
   </div>
 </template>
 

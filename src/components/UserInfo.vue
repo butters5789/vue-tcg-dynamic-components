@@ -8,6 +8,8 @@
 
       <template #default>
         <p>{{ infoText }}</p>
+
+        <input type="text" />
       </template>
     </base-card>
   </section>
