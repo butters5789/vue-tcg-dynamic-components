@@ -1,34 +1,33 @@
 <template>
   <div>
     <the-header></the-header>
-    <badge-list></badge-list>
-    <user-info
+
+    <button @click="setActiveComponent('badge-list')">Badge List</button>
+    <button @click="setActiveComponent('user-info')">User Info</button>
+
+    <component
+      :is="activeComponent"
       :full-name="activeUser.name"
       :info-text="activeUser.description"
       :role="activeUser.role"
-    ></user-info>
-    <course-goals #default="passedProps">
-      <h2>{{ passedProps.item }}</h2>
-      <p>{{ passedProps.anotherProp }}</p>
-    </course-goals>
+    />
   </div>
 </template>
 
 <script>
 import BadgeList from './components/BadgeList.vue';
-import CourseGoals from './components/CourseGoals.vue';
 import TheHeader from './components/TheHeader.vue';
 import UserInfo from './components/UserInfo.vue';
 
 export default {
   components: {
     BadgeList,
-    CourseGoals,
     TheHeader,
     UserInfo,
   },
   data() {
     return {
+      activeComponent: 'badge-list',
       activeUser: {
         name: 'Maximilian Schwarzmüller',
         description: 'Site owner and admin',
@@ -36,6 +35,11 @@ export default {
       },
     };
   },
+  methods: {
+    setActiveComponent(component) {
+      this.activeComponent = component;
+    }
+  }
 };
 </script>
 
