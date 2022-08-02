@@ -7,17 +7,23 @@
       :info-text="activeUser.description"
       :role="activeUser.role"
     ></user-info>
+    <course-goals #default="passedProps">
+      <h2>{{ passedProps.item }}</h2>
+      <p>{{ passedProps.anotherProp }}</p>
+    </course-goals>
   </div>
 </template>
 
 <script>
 import BadgeList from './components/BadgeList.vue';
+import CourseGoals from './components/CourseGoals.vue';
 import TheHeader from './components/TheHeader.vue';
 import UserInfo from './components/UserInfo.vue';
 
 export default {
   components: {
     BadgeList,
+    CourseGoals,
     TheHeader,
     UserInfo,
   },
