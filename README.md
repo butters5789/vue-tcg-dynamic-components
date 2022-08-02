@@ -1,5 +1,5 @@
 # Vue - The Complete Guide
 
-## Vue Advanced Components
+## Vue Dynamic Components
 
-### Assignment 10
+### Assignment 11
