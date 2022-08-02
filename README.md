@@ -3,4 +3,3 @@
 ## Vue Advanced Components
 
 ### Assignment 10
-# vue-tcg-dynamic-components
